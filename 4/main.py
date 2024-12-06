@@ -35,7 +35,8 @@ for report in reports:
     safety = safetychecker(levels)
 
     if safety == "unsafe":
-        for x in range(len(levels) - 1, -1, -1):
+        cplevels = levels[:]
+        for x in range(len(cplevels)):
             oldlevels = levels[:]
             levels.pop(x)
             safety = safetychecker(levels)
